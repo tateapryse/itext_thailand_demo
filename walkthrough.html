@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Act 2 · iText Walkthrough</title>
+<style>
+  :root { --teal:#07EB9A; --orange:#FE7C1B; --bg:#101010; --card:#1d1d1d; --card2:#262626;
+          --txt:#f2f2f2; --gray:#b8c0cc; --mute:#7b8191; --red:#ff4d4d; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--txt); font-family:"Segoe UI","Leelawadee UI","Sarabun",Tahoma,sans-serif;
+         height:100vh; overflow:hidden; display:flex; flex-direction:column; user-select:none; }
+  /* progress rail */
+  #rail { display:flex; gap:6px; padding:14px 28px 8px; }
+  .chip { flex:1; text-align:center; padding:8px 4px 7px; border-radius:8px; border:1.5px solid var(--card2);
+          color:var(--mute); font-size:12px; font-weight:600; letter-spacing:.5px; transition:all .25s; cursor:pointer; }
+  .chip small { display:block; font-weight:400; font-size:10.5px; margin-top:1px; }
+  .chip.done { border-color:var(--mute); color:var(--gray); background:var(--card); }
+  .chip.current { border-color:var(--accent,#07EB9A); color:var(--accent,#07EB9A); background:var(--card);
+                  box-shadow:0 0 14px rgba(255,255,255,.06); }
+  /* stage */
+  #stage { flex:1; display:flex; flex-direction:column; justify-content:center; padding:6px 60px 4px; overflow-y:auto; }
+  #verb  { font-size:64px; font-weight:800; letter-spacing:1px; line-height:1.05; }
+  #verb span.num { color:var(--accent); margin-right:18px; }
+  #verbTh { font-size:24px; color:var(--accent); margin:4px 0 12px; }
+  /* say card — centerpiece */
+  #say { background:var(--card); border-left:4px solid var(--accent); border-radius:0 10px 10px 0;
+         padding:14px 22px 16px; }
+  .say-lbl { font-size:11px; letter-spacing:2px; color:var(--mute); font-weight:700;
+              text-transform:uppercase; margin-bottom:10px; }
+  .say-en  { font-size:22px; line-height:1.6; color:var(--txt); }
+  .say-en p { margin-bottom:.25em; }
+  .say-en p:last-child { margin-bottom:0; }
+  .say-th  { font-size:20px; color:var(--gray); margin-top:8px; line-height:1.5; }
+  /* disclaimer — muted evidence framing (intro + done only) */
+  #disclaimer { display:none; font-size:13px; color:var(--mute); line-height:1.6;
+                margin-top:10px; padding:0 4px; font-style:italic; }
+  /* checklist strip — demoted presenter notes */
+  #checklist { margin-top:12px; font-size:13px; color:var(--mute); line-height:1.5;
+               padding:6px 12px; border-left:2px solid var(--card2); }
+  .cl-lbl  { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-right:6px; }
+  .cl-file { color:var(--gray); }
+  /* extras */
+  #extra { margin-top:14px; }
+  table.cmp { border-collapse:collapse; font-size:13.5px; width:100%; }
+  table.cmp th { text-align:left; color:var(--mute); font-size:11px; letter-spacing:1.5px; padding:4px 10px; }
+  table.cmp td { background:var(--card); border:1px solid var(--card2); padding:7px 10px; }
+  table.cmp td.raw { color:var(--red); }
+  table.cmp td.arrow { color:var(--mute); text-align:center; width:34px; }
+  table.cmp td.clean { color:var(--teal); }
+  #tamperBtn { background:var(--card); color:var(--red); border:1.5px solid var(--red);
+               border-radius:8px; padding:10px 22px; font-size:15px; font-weight:700; cursor:pointer; }
+  #sealState { display:inline-block; margin-left:16px; font-size:17px; font-weight:800; }
+  /* why-embed focal card */
+  #why { margin-top:14px; display:none; }
+  .why-box { background:var(--card); border:1px solid var(--card2); border-top:3px solid var(--accent);
+             border-radius:0 0 10px 10px; padding:14px 20px 16px; }
+  .why-hdr { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--mute);
+             font-weight:700; margin-bottom:12px; }
+  .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .why-item { border-left:2px solid var(--accent); padding-left:10px; }
+  .why-item b { display:block; font-size:13px; color:var(--accent); margin-bottom:4px; }
+  .why-item p { font-size:12.5px; color:var(--gray); line-height:1.55; }
+  .why-item small { display:block; font-size:11.5px; color:var(--mute); margin-top:5px; line-height:1.4; }
+  @media (max-width:720px) { .why-grid { grid-template-columns:1fr; } }
+  /* proof strip — quietest */
+  #proof { display:none; margin-top:14px; font-size:12px; color:var(--mute);
+           border-top:1px solid var(--card2); padding-top:8px; line-height:1.5; }
+  .proof-lbl  { font-size:10px; letter-spacing:2px; text-transform:uppercase; margin-right:6px; }
+  .proof-who  { font-weight:700; }
+  .proof-quote { font-style:italic; display:block; margin-top:4px; }
+  /* proof-ladder overlay */
+  #overlay { position:fixed; inset:0; z-index:100; background:rgba(10,10,10,.95);
+             display:none; flex-direction:column; align-items:center; justify-content:center;
+             padding:40px 60px; }
+  #overlay.open { display:flex; }
+  #ov-inner { max-width:920px; width:100%; }
+  #ov-inner h2 { font-size:22px; color:var(--teal); margin-bottom:2px; }
+  .ov-sub  { font-size:14px; color:var(--gray); margin-bottom:20px; }
+  table.ladder { border-collapse:collapse; width:100%; font-size:13.5px; }
+  table.ladder th { text-align:left; color:var(--mute); font-size:11px; letter-spacing:1.5px;
+                    padding:4px 12px; text-transform:uppercase; border-bottom:1px solid var(--card2); }
+  table.ladder td { border:1px solid var(--card2); padding:9px 12px; vertical-align:top; background:var(--card); }
+  table.ladder td:first-child { color:var(--teal); font-weight:700; white-space:nowrap; }
+  table.ladder td:nth-child(2) { color:var(--gray); font-size:12.5px; }
+  .ov-src  { font-size:11px; color:var(--mute); margin-top:18px; line-height:1.6; }
+  .ov-close { font-size:12px; color:var(--mute); margin-top:10px; text-align:center; }
+  /* footer */
+  #foot { display:flex; justify-content:space-between; align-items:center;
+          padding:12px 28px 16px; color:var(--mute); font-size:13px; }
+  #foot b { color:var(--gray); }
+  #sync { cursor:pointer; }
+  #sync.on { color:var(--teal); }
+  .navBtn { background:var(--card); border:1.5px solid var(--mute); color:var(--txt);
+            border-radius:8px; padding:8px 18px; font-size:14px; cursor:pointer; margin-left:8px; }
+  /* responsive */
+  @media (max-width:960px) {
+    #rail  { padding:10px 14px 7px; gap:4px; }
+    .chip  { font-size:11px; padding:6px 2px 5px; }
+    #stage { padding:6px 28px 4px; }
+    #verb  { font-size:52px; }
+    #verbTh{ font-size:20px; }
+    .say-en{ font-size:19px; }
+  }
+  @media (max-width:720px) {
+    #rail  { padding:8px 8px 5px; gap:3px; }
+    .chip  { font-size:10px; padding:5px 2px 4px; }
+    .chip small { display:none; }
+    #stage { padding:6px 16px 4px; }
+    #verb  { font-size:38px; }
+    #verbTh{ font-size:16px; margin:4px 0 10px; }
+    .say-en{ font-size:16px; }
+    .say-th{ font-size:16px; }
+    #extra { overflow-x:auto; }
+    table.cmp { font-size:12px; }
+  }
+  @media (max-width:520px) {
+    #stage { padding:4px 10px 4px; }
+    #verb  { font-size:28px; }
+    #verbTh{ font-size:14px; }
+    #foot  { flex-direction:column; align-items:flex-start; gap:8px; padding:10px 12px 12px; }
+    .navBtn{ padding:6px 12px; font-size:13px; margin-left:0; margin-right:6px; }
+    #overlay { padding:20px; }
+    table.ladder { font-size:11px; }
+  }
+</style>
+</head>
+<body>
+<div id="rail"></div>
+<div id="stage">
+  <div id="verb"></div>
+  <div id="verbTh"></div>
+  <div id="say"></div>
+  <div id="disclaimer"></div>
+  <div id="checklist"></div>
+  <div id="extra"></div>
+  <div id="why"></div>
+  <div id="proof"></div>
+</div>
+<div id="overlay"><div id="ov-inner"></div></div>
+<div id="foot">
+  <div><b>←</b> back &nbsp; <b>→ / Space</b> next &nbsp;·&nbsp; <b>1–9</b> jump &nbsp;·&nbsp; <b>P</b> proofs</div>
+  <div>
+    <span id="sync" title="Poll the Java app’s /status endpoint and follow the terminal">⟳ follow terminal: OFF</span>
+    <button class="navBtn" onclick="go(-1)">◄ Back</button>
+    <button class="navBtn" onclick="go(1)">Next ►</button>
+  </div>
+</div>
+
+<script>
+const FILES = {
+  raw:      "73cb029f-1bca-4ebd-a235-6261ea2e5ccc-extraction.json",
+  clean:    "extracted.json",
+  letter:   "confirmation_letter.pdf",
+  marked:   "confirmation_letter_watermarked.pdf",
+  locked:   "confirmation_letter_protected.pdf",
+  sealed:   "confirmation_letter_signed.pdf",
+  archive:  "confirmation_letter_archive.pdf",
+  tampered: "confirmation_letter_tampered.pdf"
+};
+const STATUS_URL = "http://localhost:8080/status";
+
+const T = "var(--teal)", O = "var(--orange)";
+
+const S = [
+ // 0 — Intro
+ { num:"", verb:"ACT 2 · iTEXT", verbTh:"เอกสาร → ข้อมูล → เอกสาร", accent:T,
+   art:["THE BATON FROM ACT 1", FILES.raw, "Raw Apryse SDK extraction — exactly as Act 1 handed it over"],
+   show:["Have File Explorer open in the output folder, side by side with this window"],
+   say:{ en:["What you're about to see is Act 1's output — a raw Apryse extraction off a real scanned form — turned into a compliant, signed, archivable document. Seven stages, running live on this machine, right now."],
+         th:"สิ่งที่คุณกำลังจะเห็นคือ output จาก Act 1 — ไฟล์ JSON ดิบจาก Apryse — แปลงเป็นเอกสารที่ผ่านมาตรฐาน ลงนามแล้ว และพร้อมจัดเก็บระยะยาว เจ็ดขั้นตอน รันสดๆ บนเครื่องนี้ ตอนนี้เลย" },
+   disclaimer:{ en:"Every stage you are about to see runs in production somewhere at world scale — a US bank, the world’s largest signature company, a German insurer, a Thai state enterprise. Each stage proven separately — no one company runs this exact pipeline.",
+                th:"ทุกขั้นตอนที่คุณจะได้เห็น มีการใช้งานจริงในระดับโลกแล้ว — พิสูจน์แล้วทีละขั้นตอน" } },
+
+ // 1 — INGEST
+ { num:"1", verb:"INGEST", verbTh:"ตอนที่ 1 · รับข้อมูล", accent:T,
+   art:["ARTIFACT PRODUCED", FILES.clean, "Canonical instruction JSON — validated against the contract"],
+   show:["Open " + FILES.raw + " and " + FILES.clean + " side by side",
+         "Point at _fieldObservations — every correction logged"],
+   say:{ en:["Apryse gave us structured output — every field it read off the form, exactly as it read it. That's the left side. What we're doing here is post-processing that raw extraction into the schema the letter generator actually needs. Customer ID, reference number, amendment type, dates — all mapped into named fields.",
+             "The right side is the organized result. Every correction is recorded in _fieldObservations — so nothing is silently rewritten. You can always trace what changed and why."],
+         th:"Apryse ส่งผลลัพธ์ที่มีโครงสร้างมาให้ — ทุกช่องที่อ่านได้จากแบบฟอร์ม ตรงตามที่อ่านได้ นั่นคือด้านซ้าย สิ่งที่เราทำที่นี่คือการแปลงข้อมูลดิบนั้นให้เป็น schema ที่ระบบสร้างจดหมายต้องการ ด้านขวาคือข้อมูลที่จัดระเบียบแล้ว ทุกการแก้ไขถูกบันทึกใน _fieldObservations — ติดตามได้ทุกอย่าง" },
+   extra:"cmp",
+   proof:{ who:"Green Dot Bank (US) · PayNearby (India)",
+           line:"A US bank holding company with 33M+ customers feeds account data straight into this engine, live — no batch, no waiting." } },
+
+ // 2 — GENERATE
+ { num:"2", verb:"GENERATE", verbTh:"ตอนที่ 2 · สร้างเอกสาร", accent:O,
+   art:["ARTIFACT PRODUCED", FILES.letter, "Thai + English letter, Buddhist-era date, Sarabun typography via pdfCalligraph"],
+   show:["Open the letter — count the table rows against the JSON’s requestedAmendments",
+         "Point at the stacked Thai tone marks — pdfCalligraph at work"],
+   say:{ en:["This letter was never typed. We took the clean JSON from the last step, pushed it through a bilingual HTML template, and iText rendered the PDF — correct Buddhist-era date, both languages, amendment rows populated automatically.",
+             "Count the rows in that table. They match the JSON exactly, field for field."],
+         th:"จดหมายฉบับนี้ไม่มีใครพิมพ์ขึ้นมา — เอา JSON ที่สะอาดจากขั้นก่อนผ่าน HTML template สองภาษา แล้ว iText render เป็น PDF ใช้ปีพุทธศักราช ทั้งสองภาษา แถวแก้ไขถูกเติมอัตโนมัติ ลองนับแถวในตาราง — ตรงกับ JSON ทุกช่อง" },
+   proof:{ who:"Green Dot Bank · Provincial Electricity Authority (Thailand)",
+           line:"PEA — a Thai state enterprise — already generates its Thai-language documents with iText, in production, in this country.",
+           quote:"In our benchmarks, iText was the clear winner in both its performance and HTML to PDF capabilities. — VP Payments Engineering, Green Dot" } },
+
+ // 3 — MARK
+ { num:"3", verb:"MARK", verbTh:"ตอนที่ 3 · ประทับลายน้ำ", accent:O,
+   art:["ARTIFACT PRODUCED", FILES.marked, "Same letter, now visibly the official record"],
+   show:["Open the file — the watermark is on every page"],
+   say:{ en:["SPECIMEN, diagonally across every page. One instruction to iText handles the whole document regardless of how many pages it is.",
+             "From this point, anyone who opens this file knows immediately they're looking at the official record — not a draft, not a copy."],
+         th:"ลายน้ำ SPECIMEN พาดเฉียงทุกหน้า คำสั่งเดียวจัดการทั้งเอกสาร ไม่ว่าจะกี่หน้า — จากนี้ไป ใครก็ตามที่เปิดไฟล์นี้รู้ทันทีว่ากำลังดูต้นฉบับ ไม่ใช่ร่างหรือสำเนา" },
+   proof:{ who:"DocuSign",
+           line:"DocuSign’s published case study lists watermark application among what it uses iText for. The watermark you just saw — same engine." } },
+
+ // 4 — LOCK
+ { num:"4", verb:"LOCK", verbTh:"ตอนที่ 4 · เข้ารหัส", accent:O,
+   art:["ARTIFACT PRODUCED", FILES.locked, "Password-protected: distinct user and owner permissions"],
+   show:["Double-click the file — the password prompt <em>is</em> the demo",
+         "User password: <b>user1234</b> — owner pwd stays internal"],
+   say:{ en:["Go ahead and try to open that file. It asks for a password straight away.",
+             "AES-256 — the same encryption class your own security policy requires for data at rest. We just bake it into the file itself. The user password is what goes to the customer. The owner password stays inside the system and is what lets us sign the document in the next step."],
+         th:"ลองเปิดไฟล์ดู — จะถามรหัสผ่านทันที AES-256 มาตรฐานเดียวกับที่นโยบาย Security ขององค์กรคุณกำหนดสำหรับข้อมูลที่จัดเก็บ เราฝังมันไว้ในตัวไฟล์โดยตรง รหัสผู้ใช้ส่งให้ลูกค้า ส่วนรหัส owner เก็บไว้ในระบบ สำหรับลงนามในขั้นต่อไป" },
+   proof:{ who:"Standard: AES-256",
+           line:"AES-256 is not our invention. It is the encryption class your own security team already mandates; we build it into the file." } },
+
+ // 5 — SEAL
+ { num:"5", verb:"SEAL", verbTh:"ตอนที่ 5 · ลงนามดิจิทัล", accent:O,
+   art:["ARTIFACT PRODUCED", FILES.sealed, "CMS signature · SHA-256 · signing time embedded"],
+   show:["Open the file and click the signature panel",
+         "Point at signer, time, and ‘document has not been modified’"],
+   say:{ en:["Open the signatures panel in Acrobat. You'll see the signer, the exact timestamp, and that the document has not been modified since this signature was applied.",
+             "That timestamp lives inside the signature itself — it's not in a separate log file somewhere. If this ever ends up in a dispute, you don't need to call anyone to verify it. The file answers the question on its own."],
+         th:"เปิด Signatures panel ใน Acrobat — คุณจะเห็นผู้ลงนาม เวลาที่แน่นอน และข้อความว่าเอกสารไม่ได้ถูกแก้ไขหลังลงนาม Timestamp อยู่ภายในลายเซ็นเอง ไม่ได้อยู่ใน log แยกต่างหาก — หากมีข้อพิพาท ไม่ต้องโทรหาใคร ไฟล์ตอบคำถามได้ด้วยตัวมันเอง" },
+   proof:{ who:"DocuSign · Swisscom Trust Services",
+           line:"The world’s largest e-signature company has run iText inside its backend since 2015, on an ESIGN / UETA / eIDAS-compliant platform." } },
+
+ // 6 — ARCHIVE
+ { num:"6", verb:"ARCHIVE", verbTh:"ตอนที่ 6 · จัดเก็บถาวร", accent:O,
+   art:["ARTIFACT PRODUCED", FILES.archive, "PDF/A-3B · embedded: " + FILES.clean + " + " + FILES.raw],
+   show:["Open the file and show the Attachments panel — the data travels inside the document"],
+   say:{ en:["PDF/A-3B is Bangkok Bank's required long-term archival format. Unlike PDF/A-1, it allows embedded files — so we attach both JSONs inside the signed document before we close it. The signature then covers everything: the letter, the raw extraction, and the canonical record.",
+             "One file, one signature, one audit trail. An auditor in ten years opens this and the entire decision chain is right there — without touching a database."],
+         th:"PDF/A-3B คือรูปแบบการจัดเก็บระยะยาวที่ธนาคารกรุงเทพกำหนด ต่างจาก PDF/A-1 ตรงที่อนุญาตให้ฝังไฟล์แนบได้ — เราจึงฝัง JSON ทั้งสองไฟล์ไว้ในเอกสารที่ลงนามแล้วก่อนปิด ลายเซ็นจึงครอบคลุมทุกอย่าง ทั้งจดหมาย ข้อมูลดิบ และบันทึกที่ผ่านการประมวลผล หนึ่งไฟล์ หนึ่งลายเซ็น หนึ่งเส้นทางตรวจสอบ ผู้ตรวจสอบในอีก 10 ปีเปิดไฟล์นี้แล้วเห็นทุกอย่างครบ — โดยไม่ต้องแตะฐานข้อมูล" },
+   why:{
+     lbl:"WHY EMBED THE JSONs AT ALL · ทำไมต้องฝัง JSON ลงในเอกสาร",
+     items:[
+       { head:"They travel together forever · เดินทางไปด้วยกันตลอด",
+         body:"Whoever receives or archives this PDF gets both JSONs automatically — no separate file, no broken link in 20 years. PDF/A-3B is the only ISO archival standard that allows this; PDF/A-1 does not.",
+         th:"ผู้รับหรือผู้จัดเก็บ PDF ได้รับ JSON ทั้งสองโดยอัตโนมัติ — ไม่ต้องจัดการไฟล์แยก PDF/A-3B คือมาตรฐาน ISO เดียวที่อนุญาตสิ่งนี้" },
+       { head:"The signature covers them · ลายเซ็นครอบคลุมทุกไฟล์แนบ",
+         body:"The CMS signature was applied after the attachments were baked in. Swap a JSON file and the signature breaks — the attachment content is inside the signed byte range.",
+         th:"ลายเซ็น CMS ถูกใช้หลังฝังไฟล์แนบแล้ว สลับไฟล์ JSON แล้วลายเซ็นแตก — เนื้อหาไฟล์แนบอยู่ภายในช่วงไบต์ที่ลงนาม" },
+       { head:"Original evidence chain · ห่วงโซ่หลักฐานดั้งเดิม",
+         body:"Raw JSON = what the AI read off the form. Canonical JSON = what the pipeline decided it meant. An auditor in 2036 opens one file and sees all three — scan data, interpretation, and the letter sent. A valid signature proves none of it was touched.",
+         th:"JSON ดิบ = สิ่งที่ AI อ่านจากแบบฟอร์ม · JSON ที่ประมวลผล = สิ่งที่ pipeline ตัดสิน ผู้ตรวจสอบในปี 2036 เปิดไฟล์เดียว เห็นทุกอย่าง — ลายเซ็นพิสูจน์ว่าไม่มีอะไรถูกแก้ไข" }
+     ]
+   },
+   proof:{ who:"Zeiss · a leading German life insurer",
+           line:"A German life insurer — as regulated as any bank — archives its digitally signed customer communications this way, for decades." } },
+
+ // 7 — VERIFY
+ { num:"7", verb:"VERIFY", verbTh:"ตอนที่ 7 · พิสูจน์", accent:O,
+   art:["ARTIFACTS COMPARED", FILES.sealed + "  vs  " + FILES.tampered, "Run the terminal’s --tamper step now"],
+   show:["Show the terminal: PASS summary in green",
+         "Run the tamper test — show FAIL in red, side by side"],
+   say:{ en:["Two files, back to back. The intact original: valid. Then a tampered copy — we flipped a single byte somewhere in the middle of the file: invalid, immediately.",
+             "It doesn't matter where in the file the change was. The signature covers the entire byte range. One bit. One failure. That's what tamper-evidence actually means."],
+         th:"สองไฟล์ ตรวจต่อกัน — ต้นฉบับที่ไม่ได้แก้ไข: ผ่าน จากนั้นสำเนาที่เราแก้ไขเพียงหนึ่งไบต์กลางไฟล์: ล้มเหลวทันที ไม่สำคัญว่าแก้ที่ส่วนไหน ลายเซ็นครอบคลุมทุกไบต์ หนึ่งบิต หนึ่งความล้มเหลว — นั่นคือความหมายที่แท้จริงของ tamper-evidence" },
+   extra:"tamper" },
+
+ // 8 — Done
+ { num:"", verb:"DONE", verbTh:"เอกสาร → ข้อมูล → เอกสาร ✓", accent:T,
+   art:["THE FULL TRAIL", "8 artifacts in the output folder", "Every stage left evidence — that is what governed means"],
+   show:["Show the output folder one last time — the whole story in one directory"],
+   say:{ en:["Seven stages. Under thirty seconds. Any machine with Java installed.",
+             "Swap in your own template, your own signing certificate, your own extraction — the pipeline stays exactly the same. What would you want to run first?"],
+         th:"7 ขั้นตอน ไม่ถึง 30 วินาที บนเครื่องที่ติดตั้ง Java ไว้แค่นั้นเอง เปลี่ยน template ของคุณ certificate ของคุณ ข้อมูล extraction ของคุณเข้ามา — pipeline เหมือนเดิมทุกอย่าง คุณอยากเริ่มจากขั้นตอนไหนก่อน?" },
+   disclaimer:{ en:"Nothing in this demo is experimental. The only new thing is combining it for your document.",
+                th:"ไม่มีสิ่งใดในเดโมนี้เป็นการทดลอง — สิ่งใหม่เพียงอย่างเดียวคือการนำมารวมกันเพื่อเอกสารของคุณ" } }
+];
+
+const CMP_ROWS = [
+  ["Customer Unique ID No. → “05/08/2026”", "submissionDate: 2026-08-05", "DATE in the ID box — moved"],
+  ["Date → “REF-2026-081451”", "referenceNo: REF-2026-081451", "REFERENCE in the date box — moved"],
+  ["เลขที่อ้างอิง / Reference No. → “SOMCHAI WATTANA”", "nameEnglish: SOMCHAI WATTANA", "NAME in the reference box — moved"],
+  ["PIN/User ID Forgotten → “Forgottenลืมรหัสลับ…”", "amendment: REQUEST_NEW_PIN (reason: FORGOTTEN)", "merged label+value — key decoded as selected option"]
+];
+
+const LADDER = [
+  { stage:"INGEST",   who:"Green Dot Bank (US) · PayNearby (India)",           line:"A US bank holding company with 33M+ customers feeds account data straight into this engine, live — no batch, no waiting." },
+  { stage:"GENERATE", who:"Green Dot Bank · PEA (Thailand)",                   line:"PEA — a Thai state enterprise — generates Thai-language documents with iText, in production, in this country." },
+  { stage:"MARK",     who:"DocuSign",                                               line:"DocuSign’s published case study lists watermark application among what it uses iText for." },
+  { stage:"LOCK",     who:"Standard: AES-256",                                      line:"The encryption class your own security team already mandates; we build it into the file." },
+  { stage:"SEAL",     who:"DocuSign · Swisscom Trust Services",               line:"The world’s largest e-signature company has run iText inside its backend since 2015, on an ESIGN / UETA / eIDAS-compliant platform." },
+  { stage:"ARCHIVE",  who:"Zeiss · a leading German life insurer",            line:"A German life insurer — as regulated as any bank — archives digitally signed customer communications this way, for decades." }
+];
+
+let cur = 0, syncOn = false, syncTimer = null, overlayOpen = false;
+
+function railHTML() {
+  return S.map((s,i) => {
+    const cls = i < cur ? "chip done" : i === cur ? "chip current" : "chip";
+    const style = i === cur ? ` style="--accent:${s.accent}"` : "";
+    return `<div class="${cls}"${style} onclick="jump(${i})">${s.num ? s.num + " · " : ""}${s.verb}<small>${s.verbTh.split("·").pop().trim()}</small></div>`;
+  }).join("");
+}
+
+function render() {
+  const s = S[cur];
+  document.body.style.setProperty("--accent", s.accent);
+  document.getElementById("rail").innerHTML = railHTML();
+
+  document.getElementById("verb").innerHTML =
+    (s.num ? `<span class="num" style="color:${s.accent}">${s.num}</span>` : "") + s.verb;
+  document.getElementById("verbTh").textContent = s.verbTh;
+  document.getElementById("verbTh").style.color = s.accent;
+
+  const say = document.getElementById("say");
+  say.style.borderColor = s.accent;
+  say.innerHTML = `<div class="say-lbl">🎤 SAY · พูด</div>` +
+    `<div class="say-en">${s.say.en.map(t => `<p>${t}</p>`).join("")}</div>` +
+    `<div class="say-th">${s.say.th}</div>`;
+
+  const dis = document.getElementById("disclaimer");
+  if (s.disclaimer) {
+    dis.innerHTML = s.disclaimer.en +
+      `<br><span style="font-size:12px">${s.disclaimer.th}</span>`;
+    dis.style.display = "block";
+  } else { dis.innerHTML = ""; dis.style.display = "none"; }
+
+  const cl = document.getElementById("checklist");
+  cl.innerHTML = `<span class="cl-lbl">FILE · ไฟล์</span>` +
+    `<span class="cl-file">${s.art[1]}</span> — ${s.show.join(" · ")}`;
+
+  const ex = document.getElementById("extra");
+  if (s.extra === "cmp") {
+    ex.innerHTML = `<table class="cmp"><tr><th>RAW FROM APRYSE SDK</th><th></th>` +
+      `<th>CANONICAL · จัดระเบียบแล้ว</th><th>OBSERVATION</th></tr>` +
+      CMP_ROWS.map(r => `<tr><td class="raw">${r[0]}</td><td class="arrow">→</td>` +
+        `<td class="clean">${r[1]}</td><td style="color:var(--mute)">${r[2]}</td></tr>`).join("") +
+      `</table>`;
+  } else if (s.extra === "tamper") {
+    ex.innerHTML = `<button id="tamperBtn" onclick="tamper(this)">⚡ TAMPER — flip one byte / ลองแก้ไขหนึ่งไบต์</button>` +
+      ` <span id="sealState" style="color:var(--teal)">SEAL VALID ✓ · ตราประทับถูกต้อง</span>`;
+  } else { ex.innerHTML = ""; }
+
+  const wy = document.getElementById("why");
+  if (s.why) {
+    wy.innerHTML = `<div class="why-box"><div class="why-hdr">${s.why.lbl}</div><div class="why-grid">` +
+      s.why.items.map(it =>
+        `<div class="why-item"><b>${it.head}</b><p>${it.body}</p><small>${it.th}</small></div>`
+      ).join("") + `</div></div>`;
+    wy.style.display = "block";
+  } else { wy.innerHTML = ""; wy.style.display = "none"; }
+
+  const pr = document.getElementById("proof");
+  if (s.proof) {
+    pr.innerHTML = `<span class="proof-lbl">PROVEN IN PRODUCTION · ใช้งานจริงแล้ว</span>` +
+      `<span class="proof-who" style="color:var(--accent)">${s.proof.who}</span> — ${s.proof.line}` +
+      (s.proof.quote ? `<em class="proof-quote">${s.proof.quote}</em>` : "");
+    pr.style.display = "block";
+  } else { pr.innerHTML = ""; pr.style.display = "none"; }
+}
+
+function tamper(btn) {
+  const st = document.getElementById("sealState");
+  st.style.color = "var(--red)";
+  st.textContent = "SEAL BROKEN ✗ — SIGNATURE INVALID · ตราประทับแตก ลายเซ็นไม่ถูกต้อง";
+  btn.disabled = true; btn.style.opacity = .5;
+}
+
+function go(d) { cur = Math.max(0, Math.min(S.length-1, cur+d)); render(); }
+function jump(i) { cur = i; render(); }
+
+function toggleOverlay() {
+  overlayOpen = !overlayOpen;
+  document.getElementById("overlay").classList.toggle("open", overlayOpen);
+}
+
+(function buildOverlay() {
+  document.getElementById("ov-inner").innerHTML =
+    `<h2>The proof ladder — each stage, proven separately</h2>` +
+    `<p class="ov-sub">พิสูจน์แล้วทีละขั้นตอน</p>` +
+    `<table class="ladder"><tr><th>Stage</th><th>Proven by</th><th>One line</th></tr>` +
+    LADDER.map(r => `<tr><td>${r.stage}</td><td>${r.who}</td><td>${r.line}</td></tr>`).join("") +
+    `</table>` +
+    `<p class="ov-src">Sources: itextpdf.com/resources/case-studies — Green Dot Bank · DocuSign · PEA (iText DITO) · Swisscom Trust Services (pdfa.org) · PayNearby · Zeiss (iText PDF/A ebook)</p>` +
+    `<p class="ov-close">Press <b>P</b> or <b>Esc</b> to close</p>`;
+})();
+
+document.addEventListener("keydown", e => {
+  if (overlayOpen) {
+    if (e.key === "p" || e.key === "P" || e.key === "Escape") toggleOverlay();
+    return;
+  }
+  if (e.key === "p" || e.key === "P") { toggleOverlay(); return; }
+  if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); go(1); }
+  else if (e.key === "ArrowLeft") go(-1);
+  else if (e.key >= "1" && e.key <= "9") jump(Math.min(S.length-1, parseInt(e.key)));
+});
+
+const KEYMAP = { ingest:1, generate:2, mark:3, lock:4, seal:5, archive:6, verify:7 };
+document.getElementById("sync").addEventListener("click", function () {
+  syncOn = !syncOn;
+  this.className = syncOn ? "on" : "";
+  this.textContent = "⟳ follow terminal: " + (syncOn ? "ON" : "OFF");
+  if (syncOn) syncTimer = setInterval(async () => {
+    try {
+      const r = await fetch(STATUS_URL, { cache:"no-store" });
+      const j = await r.json();
+      const k = (j.currentStepKey || j.step || "").toLowerCase();
+      if (KEYMAP[k] !== undefined && KEYMAP[k] !== cur) { cur = KEYMAP[k]; render(); }
+    } catch(e) { /* app not running */ }
+  }, 1000);
+  else clearInterval(syncTimer);
+});
+
+render();
+</script>
+</body>
+</html>

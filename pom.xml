@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.apryse.demo</groupId>
+    <artifactId>itext-shenzhen-bank-statement</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>iText Shenzhen Bank Statement Demo</name>
+    <description>
+        Interactive iText (Java) demo: generate a Chinese bank statement as PDF/A,
+        add a watermark, apply password protection and a digital signature.
+    </description>
+
+    <properties>
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <itext.version>9.6.0</itext.version>
+        <html2pdf.version>6.3.2</html2pdf.version>
+        <typography.version>5.0.6</typography.version>
+    </properties>
+
+    <dependencies>
+        <!-- iText core: kernel, io, layout, forms, pdfa, sign, ... -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext-core</artifactId>
+            <version>${itext.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- pdfHTML: HTML → PDF conversion for the amendment confirmation letter -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>html2pdf</artifactId>
+            <version>${html2pdf.version}</version>
+        </dependency>
+
+        <!-- pdfCalligraph (typography) is a commercial iText add-on not available on Maven Central.
+             Add it manually from the iText Artifactory if a license key is available.
+             The demo degrades gracefully when the jar is absent. -->
+
+        <!-- License key loader (iText 9 format) — enables pdfCalligraph -->
+        <dependency>
+            <groupId>com.itextpdf.licensing</groupId>
+            <artifactId>licensing-base</artifactId>
+            <version>4.2.6</version>
+        </dependency>
+
+        <!-- pdfCalligraph: Thai/Arabic shaping; jar must be in local Maven repo -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>typography</artifactId>
+            <version>${typography.version}</version>
+        </dependency>
+
+        <!-- BouncyCastle adapter: required at runtime for encryption + digital signatures -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>bouncy-castle-adapter</artifactId>
+            <version>${itext.version}</version>
+        </dependency>
+
+        <!-- Simple SLF4J binding so iText logging shows up on the console -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.13</version>
+        </dependency>
+
+        <!-- JUnit 5 for normalizer unit tests -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>itext</id>
+            <name>iText Repository</name>
+            <url>https://repo.itextsupport.com/releases</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <finalName>itext-shenzhen-demo</finalName>
+        <plugins>
+            <!-- Build a single runnable fat-jar so the interactive demo runs with `java -jar` -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.3</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.apryse.demo.BankStatementDemo</mainClass>
+                                </transformer>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                            </transformers>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- JUnit 5 execution -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

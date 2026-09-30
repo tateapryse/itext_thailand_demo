@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>Amendment Confirmation Letter</title>
+<style>
+  body { font-family: "Sarabun", "Loma", "Noto Sans Thai", "Tahoma", sans-serif; font-size: 11.5pt; color: #1a2433; margin: 2.2cm 2.4cm; line-height: 1.45; }
+  .head { border-bottom: 2.5px solid #1a3b8f; padding-bottom: 10px; margin-bottom: 18px; }
+  .bank { font-size: 15pt; font-weight: bold; color: #1a3b8f; }
+  .bank-en { font-size: 10.5pt; color: #1a3b8f; }
+  .specimen { float: right; border: 1.5px solid #b91c1c; color: #b91c1c; font-size: 9.5pt; font-weight: bold; padding: 3px 10px; letter-spacing: 1px; }
+  .meta { margin: 12px 0 4px 0; font-size: 10.5pt; }
+  .meta td { padding: 1px 14px 1px 0; }
+  h1 { font-size: 13.5pt; text-align: center; margin: 16px 0 4px 0; }
+  h2 { font-size: 11.5pt; text-align: center; margin: 0 0 14px 0; font-weight: normal; color: #444; }
+  .en { color: #555; font-size: 10pt; }
+  table.changes { border-collapse: collapse; width: 100%; margin: 10px 0 14px 0; font-size: 10.5pt; }
+  table.changes th { background: #eef2fa; border: 1px solid #c9d4e8; padding: 6px 8px; text-align: left; }
+  table.changes td { border: 1px solid #c9d4e8; padding: 6px 8px; vertical-align: top; }
+  .status { color: #0b6e4f; font-weight: bold; white-space: nowrap; }
+  .sig { margin-top: 26px; }
+  .sigbox { margin-top: 8px; border: 1px dashed #8a94a6; padding: 8px 12px; font-size: 9.5pt; color: #555; width: 62%; }
+  .foot { margin-top: 20px; border-top: 1px solid #c9d4e8; padding-top: 8px; font-size: 8.8pt; color: #777; }
+</style>
+</head>
+<body>
+
+<div class="head">
+  <span class="specimen">SPECIMEN &middot; เอกสารตัวอย่างเพื่อการสาธิต</span>
+  <div class="bank">ธนาคารกรุงเทพ จำกัด (มหาชน)</div>
+  <div class="bank-en">Bangkok Bank Public Company Limited &mdash; Bualuang iBanking Service Center</div>
+</div>
+
+<table class="meta">
+  <tr><td>ที่อ้างอิง / Ref. No.</td><td><b>{{referenceNo}}</b></td>
+      <td>เลขที่ลูกค้า / Customer ID</td><td><b>{{customerId}}</b></td></tr>
+  <tr><td>วันที่ / Date</td><td><b>{{dateThai}} / {{dateEnglish}}</b></td>
+      <td>สาขา / Branch</td><td><b>{{branchTh}} / {{branchEn}}</b></td></tr>
+</table>
+
+<h1>หนังสือยืนยันการเปลี่ยนแปลงข้อมูลบริการ</h1>
+<h2>Amendment Confirmation Letter</h2>
+
+<p>เรียน คุณ{{nameThai}}<br>
+<span class="en">Dear {{titleEn}}{{nameEnglish}},</span></p>
+
+<p>ตามที่ท่านได้ยื่นคำขอเปลี่ยนแปลง/ยกเลิกข้อมูลบริการบัวหลวง ไอแบงก์กิ้ง ณ {{branchTh}}
+เมื่อวันที่ {{dateThai}} ธนาคารขอยืนยันว่าได้ดำเนินการตามคำขอของท่านเรียบร้อยแล้ว ดังรายละเอียดต่อไปนี้</p>
+<p class="en">Further to the amendment/cancellation request for Bualuang iBanking services that you submitted at {{branchEn}}
+on {{dateEnglish}}, the Bank confirms that your request has been processed as follows:</p>
+
+<table class="changes">
+  <tr>
+    <th style="width:4%">#</th>
+    <th style="width:48%">รายการที่เปลี่ยนแปลง / Amendment</th>
+    <th style="width:34%">รายละเอียด / Details</th>
+    <th style="width:14%">สถานะ / Status</th>
+  </tr>
+  {{AMENDMENT_ROWS}}
+</table>
+
+<p>หากท่านไม่ได้เป็นผู้ยื่นคำขอดังกล่าว หรือพบข้อมูลที่ไม่ถูกต้อง กรุณาติดต่อธนาคารทันทีที่ บัวหลวงโฟน โทร. 1333
+หรือติดต่อสาขาของธนาคารทุกแห่ง</p>
+<p class="en">If you did not submit this request, or if any of the above details are incorrect, please contact the Bank
+immediately via Bualuang Phone 1333 or at any branch.</p>
+
+<div class="sig">
+  <p>ขอแสดงความนับถือ<br><span class="en">Yours sincerely,</span></p>
+  <p><b>ธนาคารกรุงเทพ จำกัด (มหาชน)</b><br>
+  <span class="en">Bangkok Bank Public Company Limited</span></p>
+  <div class="sigbox">
+    ลงลายมือชื่อดิจิทัลโดยระบบ / Digitally signed by: <b>Bualuang Document Services</b><br>
+    วันที่-เวลา / Timestamp: {{sigTimestamp}} &middot; SHA-256 &middot; เอกสารฉบับนี้ตรวจสอบการแก้ไขได้ / tamper-evident
+  </div>
+</div>
+
+<div class="foot">
+  เอกสารฉบับนี้สร้างขึ้นและลงลายมือชื่อดิจิทัลโดยระบบอัตโนมัติ จัดเก็บถาวรในรูปแบบ PDF/A พร้อมข้อมูลต้นทางฝังภายในเอกสาร &middot;
+  This document was generated and digitally signed automatically, and is archived as PDF/A with its source data embedded. &middot;
+  SPECIMEN &mdash; for demonstration only; all data is synthetic / ข้อมูลทั้งหมดเป็นข้อมูลสมมติเพื่อการสาธิตเท่านั้น
+</div>
+
+</body>
+</html>

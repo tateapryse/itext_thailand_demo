@@ -1,0 +1,18 @@
+# Section anchors: normalizedAnchorText=AMENDMENT_TYPE
+# Used for geometry-based section assignment.
+# Elements on the same page whose y-position is below an anchor (and above the next)
+# are assigned to that anchor's amendment type.
+# Diacritic-insensitive matching applied at runtime (same normalizer as label dictionary).
+
+ขอรหัสลับแรกเขา=REQUEST_NEW_PIN
+ขอเปลียนแปลงทีติดตอทางไปรษณีย=CHANGE_MAILING_ADDRESS
+ขอเปลียนแปลงชือ/นามสกุล=CHANGE_NAME
+change primary account number=CHANGE_PRIMARY_ACCOUNT
+ขอยกเลิกการใชบริการบัวหลวง=CANCEL_IBANKING_SERVICE
+ขอเพิมบัตรเครดิต=ADD_CREDIT_CARD
+ขอเพิมบัญชีเงินฝาก=ADD_DEPOSIT_ACCOUNT
+ขอเพิมบัญชีสินเชือ=ADD_LOAN_ACCOUNT
+ขอเพิมบัญชีเงินตราตางประเทศ=ADD_THIRD_PARTY_ACCOUNT
+ขอยกเลิกบัญชีเงินฝาก=CANCEL_DEPOSIT_ACCOUNT
+ขอยกเลิกบัตรเครดิต=CANCEL_CREDIT_CARD
+ขอยกเลิกบัญชีสินเชือ=CANCEL_LOAN_ACCOUNT

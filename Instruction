@@ -1,0 +1,14 @@
+Task: create a iText (Java) demo workflow where:
+
+1. We create a txt file that contains bank statements mock data in Chinese
+2. Prepare a PDF template in Chinese that can work with iText. Save it in the project dir.
+3. We read bank statements from the txt file and generate a bank statement in PDF/A format, save it in the project dir.
+4. Add a watermark with text "存档专用"
+5. Add password protection
+6. Add digital signature
+7. We digitally sign the PDF and save the signed version, save it in the project dir.
+
+Note:
+We want the demo to be basic interactive inside terminal, where between each step we prompt the user to press any key to continue
+We do not have libraries / anything installed, please download when needed
+Check official documentation when needed

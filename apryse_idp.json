@@ -1,0 +1,2652 @@
+{
+  "properties": {
+    "producer": "keyValExtract",
+    "schemaVersion": "1.0",
+    "coordinateSystem": "originTop"
+  },
+  "runInfo": {
+    "producerPlatform": "Windows",
+    "producerVersion": "2.2.2-6c29353"
+  },
+  "pages": [
+    {
+      "properties": {
+        "pageNumber": 1
+      },
+      "keyValueElements": [
+        {
+          "key_text": "Customer Unique ID No.",
+          "value_text": "05/08/2026",
+          "key_rect": [
+            369.893,
+            70.273,
+            446.381,
+            77.515
+          ],
+          "value_rect": [
+            451.463,
+            61.597,
+            528.943,
+            79.744
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "เลขที่อางอิง/Reference No.",
+          "value_text": "SOMCHAI WATTANA",
+          "key_rect": [
+            369.893,
+            80.059,
+            452.744,
+            92.551
+          ],
+          "value_rect": [
+            456.524,
+            81.854,
+            541.836,
+            92.02
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Branch",
+          "value_text": "ผูจัดการธนาคารกรุงเทพ จำกัด (มหาชน)",
+          "key_rect": [
+            41.074,
+            83.51,
+            61.414,
+            90.863
+          ],
+          "value_rect": [
+            61.516,
+            93.989,
+            200.274,
+            109.844
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "To",
+          "value_text": "The Manager, Bangkok Bank Public Company Limited",
+          "key_rect": [
+            41.074,
+            109.731,
+            47.53,
+            117.083
+          ],
+          "value_rect": [
+            62.528,
+            109.731,
+            221.197,
+            117.083
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Date",
+          "value_text": "REF-2026-081451",
+          "key_rect": [
+            402.492,
+            114.691,
+            416.88,
+            122.043
+          ],
+          "value_rect": [
+            420.083,
+            109.184,
+            526.223,
+            124.307
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "I, Mr./Mrs./Miss",
+          "value_text": "ขาพเจา นาย/นาง/นางสาว",
+          "key_rect": [
+            60.917,
+            137.861,
+            102.963,
+            144.545
+          ],
+          "value_rect": [
+            60.917,
+            121.627,
+            152.106,
+            137.482
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "ขอรหัสลับแรกเขา และรหัสประจำตัวลูกคา Request a New PIN and User ID",
+          "value_text": "",
+          "key_rect": [
+            57.373,
+            179.932,
+            297.411,
+            195.787
+          ],
+          "value_rect": [
+            38.466,
+            181.151,
+            54.663,
+            194.307
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "PIN Damaged",
+          "value_text": "",
+          "key_rect": [
+            67.294,
+            212.487,
+            110.037,
+            219.839
+          ],
+          "value_rect": [
+            49.601,
+            198.355,
+            62.761,
+            210.5
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "PIN Damaged",
+          "value_text": "ซองรหัสลับแรกเขาชำรุด",
+          "key_rect": [
+            67.294,
+            212.487,
+            110.037,
+            219.839
+          ],
+          "value_rect": [
+            67.294,
+            196.745,
+            150.727,
+            212.6
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "PIN/User ID Not Received",
+          "value_text": "ไมไดรับรหัสลับแรกเขา/รหัสประจำตัว",
+          "key_rect": [
+            218.24,
+            212.487,
+            297.528,
+            219.839
+          ],
+          "value_rect": [
+            218.24,
+            196.745,
+            351.478,
+            212.6
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "PIN/User ID",
+          "value_text": "",
+          "key_rect": [
+            416.098,
+            199.658,
+            448.329,
+            219.839
+          ],
+          "value_rect": [
+            399.85,
+            199.367,
+            413.009,
+            210.5
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "PIN/User ID",
+          "value_text": "Forgottenลืมรหัสลับแรกเขา/รหัสประจำตัว",
+          "key_rect": [
+            416.098,
+            199.658,
+            448.329,
+            219.839
+          ],
+          "value_rect": [
+            416.098,
+            199.658,
+            526.402,
+            219.839
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "ขอเปลี่ยนแปลงที่ติดตอทางไปรษณีย Change Mailing Address",
+          "value_text": "",
+          "key_rect": [
+            57.373,
+            258.593,
+            254.83,
+            274.448
+          ],
+          "value_rect": [
+            44.54,
+            235.8,
+            58.712,
+            249.968
+          ],
+          "confidence": 0.998
+        },
+        {
+          "key_text": "Moo Silom Tower Unit 24",
+          "value_text": "หมูทีี่ Soi Silom 19 … … … … … … … … … …",
+          "key_rect": [
+            163.285,
+            295.677,
+            210.725,
+            304.169
+          ],
+          "value_rect": [
+            161.687,
+            281.075,
+            207.95,
+            296.93
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Moo Silom Tower Unit 24",
+          "value_text": "3",
+          "key_rect": [
+            163.285,
+            295.677,
+            210.725,
+            304.169
+          ],
+          "value_rect": [
+            91.092,
+            291.378,
+            96.352,
+            302.467
+          ],
+          "confidence": 0.914
+        },
+        {
+          "key_text": "Trok/Soi",
+          "value_text": "Bangkok",
+          "key_rect": [
+            53.121,
+            318.077,
+            75.225,
+            325.429
+          ],
+          "value_rect": [
+            101.214,
+            322.743,
+            141.379,
+            334.841
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Street",
+          "value_text": "จังหวัด/รัฐ10500",
+          "key_rect": [
+            216.622,
+            318.077,
+            233.134,
+            325.429
+          ],
+          "value_rect": [
+            214.785,
+            323.595,
+            276.324,
+            339.45
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Sub-District",
+          "value_text": "รหัสไปรษณียThailand…",
+          "key_rect": [
+            357.622,
+            318.077,
+            390.382,
+            325.429
+          ],
+          "value_rect": [
+            356.615,
+            323.595,
+            438.411,
+            339.45
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Sub-District",
+          "value_text": "somchai.w@gmail.com",
+          "key_rect": [
+            357.622,
+            318.077,
+            390.382,
+            325.429
+          ],
+          "value_rect": [
+            472.721,
+            325.021,
+            539.708,
+            332.647
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "District/City",
+          "value_text": "081-234-5678",
+          "key_rect": [
+            53.121,
+            339.337,
+            86.385,
+            346.689
+          ],
+          "value_rect": [
+            79.957,
+            335.884,
+            154.935,
+            349.998
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Province/State",
+          "value_text": "02-634-7890",
+          "key_rect": [
+            217.284,
+            334.864,
+            260.1,
+            349.987
+          ],
+          "value_rect": [
+            262.166,
+            334.864,
+            335.326,
+            349.987
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Postal Code",
+          "value_text": "02-634-7800",
+          "key_rect": [
+            358.285,
+            338.542,
+            394.152,
+            347.438
+          ],
+          "value_rect": [
+            398.825,
+            338.542,
+            441.86,
+            347.438
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Country",
+          "value_text": "02-634-7801",
+          "key_rect": [
+            448.286,
+            335.658,
+            471.266,
+            350.216
+          ],
+          "value_rect": [
+            473.734,
+            335.658,
+            544.162,
+            350.216
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "New E-mail Address",
+          "value_text": "",
+          "key_rect": [
+            67.294,
+            385.781,
+            136.339,
+            394.972
+          ],
+          "value_rect": [
+            51.626,
+            382.543,
+            63.773,
+            394.687
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "New E-mail Address",
+          "value_text": "สมชาย",
+          "key_rect": [
+            67.294,
+            385.781,
+            136.339,
+            394.972
+          ],
+          "value_rect": [
+            129.559,
+            371.216,
+            173.36,
+            391.792
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Capital Letters and Personal E-mail Address Only)",
+          "value_text": "ไมควรใชรวมกับบุคคลอื่น",
+          "key_rect": [
+            411.847,
+            393.225,
+            551.927,
+            404.756
+          ],
+          "value_rect": [
+            344.036,
+            393.225,
+            409.929,
+            404.756
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Mobile",
+          "value_text": "",
+          "key_rect": [
+            68.003,
+            424.376,
+            87.923,
+            431.728
+          ],
+          "value_rect": [
+            51.626,
+            418.975,
+            62.761,
+            428.084
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Mobile",
+          "value_text": "มือถือ วัฒนา… …",
+          "key_rect": [
+            68.003,
+            424.376,
+            87.923,
+            431.728
+          ],
+          "value_rect": [
+            68.003,
+            408.24,
+            121.454,
+            424.489
+          ],
+          "confidence": 0.942
+        },
+        {
+          "key_text": "Office",
+          "value_text": "ที่ทำงาน",
+          "key_rect": [
+            320.759,
+            424.376,
+            338.795,
+            431.728
+          ],
+          "value_rect": [
+            320.759,
+            408.634,
+            349.17,
+            424.489
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Office",
+          "value_text": "SOMCHAI",
+          "key_rect": [
+            320.759,
+            424.376,
+            338.795,
+            431.728
+          ],
+          "value_rect": [
+            348.21,
+            405.705,
+            408.433,
+            420.829
+          ],
+          "confidence": 0.996
+        },
+        {
+          "key_text": "Home",
+          "value_text": "✔",
+          "key_rect": [
+            67.767,
+            448.471,
+            85.203,
+            455.823
+          ],
+          "value_rect": [
+            51.626,
+            438.204,
+            62.761,
+            447.312
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Office",
+          "value_text": "โทรสาร123-4-56789-0…",
+          "key_rect": [
+            320.759,
+            424.376,
+            338.795,
+            431.728
+          ],
+          "value_rect": [
+            320.759,
+            431.312,
+            417.508,
+            447.167
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Fax No.",
+          "value_text": "234-5-67890-1",
+          "key_rect": [
+            320.759,
+            447.054,
+            342.753,
+            454.406
+          ],
+          "value_rect": [
+            345.174,
+            443.158,
+            424.162,
+            457.272
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "ขอเปลี่ยนแปลงชื่อ/นามสกุล",
+          "value_text": "",
+          "key_rect": [
+            57.373,
+            464.813,
+            151.716,
+            480.668
+          ],
+          "value_rect": [
+            44.54,
+            464.516,
+            56.687,
+            476.661
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Name in Thai",
+          "value_text": "ชื่อ/นามสกุล (ภาษาไทย)",
+          "key_rect": [
+            53.121,
+            500.695,
+            92.059,
+            507.379
+          ],
+          "value_rect": [
+            53.121,
+            484.461,
+            137.189,
+            500.316
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Name in Thai",
+          "value_text": "นาย/นาง/นางสาว",
+          "key_rect": [
+            53.121,
+            500.695,
+            92.059,
+            507.379
+          ],
+          "value_rect": [
+            140.939,
+            484.461,
+            198.004,
+            500.316
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Name in English",
+          "value_text": "ชื่อ/นามสกุล (ภาษาอังกฤษ)",
+          "key_rect": [
+            53.121,
+            522.88,
+            99.727,
+            530.232
+          ],
+          "value_rect": [
+            53.121,
+            507.138,
+            147.731,
+            522.993
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Name in English",
+          "value_text": "Mr./Mrs./Miss",
+          "key_rect": [
+            53.121,
+            522.88,
+            99.727,
+            530.232
+          ],
+          "value_rect": [
+            150.25,
+            507.138,
+            193.272,
+            522.993
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Change Primary Account Number",
+          "value_text": "ขอเปลี่ยนแปลงหมายเลขบัญชีเงินฝากหลัก",
+          "key_rect": [
+            203.516,
+            539.932,
+            304.276,
+            555.787
+          ],
+          "value_rect": [
+            57.373,
+            539.932,
+            200.016,
+            555.787
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "New Primary Account No.บัญชีเงินฝากหลักใหมเลขที่",
+          "value_text": "SOMCHAI WATTANA",
+          "key_rect": [
+            53.121,
+            585.336,
+            143.904,
+            608.041
+          ],
+          "value_rect": [
+            218.639,
+            568.826,
+            292.472,
+            577.625
+          ],
+          "confidence": 0.996
+        },
+        {
+          "key_text": "New Primary Account No.บัญชีเงินฝากหลักใหมเลขที่",
+          "value_text": "FC-789-01234-5",
+          "key_rect": [
+            53.121,
+            585.336,
+            143.904,
+            608.041
+          ],
+          "value_rect": [
+            412.997,
+            578.167,
+            533.608,
+            597.436
+          ],
+          "confidence": 0.993
+        },
+        {
+          "key_text": "New Primary Account No.บัญชีเงินฝากหลักใหมเลขที่",
+          "value_text": "SOMCHAI WATTANA 4000-0012",
+          "key_rect": [
+            53.121,
+            585.336,
+            143.904,
+            608.041
+          ],
+          "value_rect": [
+            148.792,
+            595.667,
+            212.928,
+            600.449
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "New Primary Account No.บัญชีเงินฝากหลักใหมเลขที่",
+          "value_text": "4000-0098-7654-3210",
+          "key_rect": [
+            53.121,
+            585.336,
+            143.904,
+            608.041
+          ],
+          "value_rect": [
+            217.626,
+            592.631,
+            299.931,
+            602.379
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "ชื่อบัญชี LN-001-234567-8…",
+          "key_rect": [
+            53.121,
+            629.888,
+            98.48,
+            637.24
+          ],
+          "value_rect": [
+            53.121,
+            609.106,
+            204.683,
+            628.492
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Owner’s Signature",
+          "value_text": "ลายมือชื่อเจาของบัญชี567-8-90123-4…",
+          "key_rect": [
+            298.279,
+            629.888,
+            379.084,
+            637.24
+          ],
+          "value_rect": [
+            297.639,
+            611.138,
+            442.532,
+            630.001
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "ขอยกเลิกการใชบริการบัวหลวง",
+          "key_rect": [
+            53.121,
+            629.888,
+            98.48,
+            637.24
+          ],
+          "value_rect": [
+            57.373,
+            647.648,
+            161.547,
+            663.503
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "ไอแบงกกิ้งและบัวหลวง เอ็มแบงกกิ้ง",
+          "key_rect": [
+            53.121,
+            629.888,
+            98.48,
+            637.24
+          ],
+          "value_rect": [
+            165.298,
+            647.648,
+            288.309,
+            663.503
+          ],
+          "confidence": 0.998
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "ขาพเจารับทราบวาจำนวนบัญชีที่เพิ่มขึ้นเมื่อรวมกับจำนวนบัญชีที่มีอยูเดิม ขาพเจาขอรับรองวาขอมูลขางตนถูกตองตามความเปนจริงทุกประการ",
+          "key_rect": [
+            53.121,
+            629.888,
+            98.48,
+            637.24
+          ],
+          "value_rect": [
+            41.073,
+            669.512,
+            280.554,
+            698.368
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cancel Bualuang iBanking and Bualuang",
+          "value_text": "ตองไมเกินจำนวนสูงสุดที่ธนาคารกำหนด",
+          "key_rect": [
+            291.81,
+            647.648,
+            413.425,
+            663.503
+          ],
+          "value_rect": [
+            284.154,
+            669.512,
+            419.062,
+            685.367
+          ],
+          "confidence": 0.993
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "MALEE WATTANA 678-9-01234 BANGKOK HOSPITAL",
+          "key_rect": [
+            434.049,
+            750.327,
+            471.44,
+            757.679
+          ],
+          "value_rect": [
+            395.787,
+            736.246,
+            536.564,
+            744.187
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "",
+          "key_rect": [
+            434.049,
+            750.327,
+            471.44,
+            757.679
+          ],
+          "value_rect": [
+            539.544,
+            731.689,
+            555.741,
+            747.882
+          ],
+          "confidence": 0.999
+        }
+      ]
+    },
+    {
+      "properties": {
+        "pageNumber": 2
+      },
+      "keyValueElements": [
+        {
+          "key_text": "For official use only",
+          "value_text": "สำหรับเจาหนาที่ธนาคาร",
+          "key_rect": [
+            477.468,
+            103.189,
+            534.453,
+            109.808
+          ],
+          "value_rect": [
+            472.618,
+            92.309,
+            539.294,
+            103.84
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Owner’s Signature",
+          "value_text": "ลายมือชื่อเจาของบัญชี",
+          "key_rect": [
+            350.051,
+            112.478,
+            430.856,
+            119.83
+          ],
+          "value_rect": [
+            351.468,
+            98.742,
+            427.602,
+            113.156
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "บัญชีเลขที่ 345-6-78901-2 FC-789-012",
+          "key_rect": [
+            69.241,
+            127.447,
+            106.632,
+            134.799
+          ],
+          "value_rect": [
+            68.072,
+            111.705,
+            176.557,
+            127.56
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Owner’s Signature",
+          "value_text": "ตรวจสอบความถูกตองเรียบรอยแลว",
+          "key_rect": [
+            350.051,
+            112.478,
+            430.856,
+            119.83
+          ],
+          "value_rect": [
+            457.767,
+            109.251,
+            554.386,
+            120.782
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "567-8-90123-4",
+          "key_rect": [
+            69.241,
+            127.447,
+            106.632,
+            134.799
+          ],
+          "value_rect": [
+            178.147,
+            117.216,
+            252.365,
+            130.478
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "ชื่อบัญชี",
+          "key_rect": [
+            68.003,
+            153.951,
+            113.362,
+            161.303
+          ],
+          "value_rect": [
+            68.003,
+            138.209,
+            94.855,
+            154.064
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "LN-001-234567-8",
+          "key_rect": [
+            69.241,
+            127.447,
+            106.632,
+            134.799
+          ],
+          "value_rect": [
+            110.325,
+            133.45,
+            231.67,
+            151.597
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Owner’s Signature",
+          "value_text": "4000-0012-3456-7890",
+          "key_rect": [
+            350.051,
+            112.478,
+            430.856,
+            119.83
+          ],
+          "value_rect": [
+            455.513,
+            130.496,
+            548.658,
+            141.528
+          ],
+          "confidence": 0.998
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "บัญชีเลขที่",
+          "key_rect": [
+            68.003,
+            153.951,
+            113.362,
+            161.303
+          ],
+          "value_rect": [
+            68.072,
+            162.729,
+            103.037,
+            178.584
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "",
+          "key_rect": [
+            69.241,
+            178.471,
+            106.632,
+            185.823
+          ],
+          "value_rect": [
+            109.326,
+            165.971,
+            153.866,
+            183.175
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "",
+          "key_rect": [
+            69.241,
+            178.471,
+            106.632,
+            185.823
+          ],
+          "value_rect": [
+            154.878,
+            165.971,
+            176.136,
+            184.187
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "",
+          "key_rect": [
+            69.241,
+            178.471,
+            106.632,
+            185.823
+          ],
+          "value_rect": [
+            179.173,
+            165.971,
+            256.106,
+            183.175
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "ขอเพิ่มบัญชีเงินฝากเงินตราตางประเทศ",
+          "key_rect": [
+            68.003,
+            204.975,
+            113.362,
+            212.327
+          ],
+          "value_rect": [
+            57.373,
+            218.908,
+            190.012,
+            234.763
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.บัญชีเลขที่",
+          "value_text": "",
+          "key_rect": [
+            58.082,
+            238.801,
+            95.473,
+            259.804
+          ],
+          "value_rect": [
+            95.154,
+            241.872,
+            377.58,
+            259.076
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "ชื่อบัญชี",
+          "key_rect": [
+            58.082,
+            282.361,
+            103.441,
+            289.713
+          ],
+          "value_rect": [
+            58.082,
+            266.619,
+            84.933,
+            282.474
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "ขอเพิ่มบัตรเครดิตของธนาคารกรุงเทพ",
+          "key_rect": [
+            58.082,
+            282.361,
+            103.441,
+            289.713
+          ],
+          "value_rect": [
+            58.082,
+            296.756,
+            185.969,
+            312.611
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cardholder’s Signature",
+          "value_text": "ลายมือชื่อผูถือบัตร",
+          "key_rect": [
+            355.389,
+            308.069,
+            422.552,
+            315.421
+          ],
+          "value_rect": [
+            356.287,
+            293.624,
+            419.747,
+            308.038
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cardholder’s Signature",
+          "value_text": "",
+          "key_rect": [
+            355.389,
+            308.069,
+            422.552,
+            315.421
+          ],
+          "value_rect": [
+            455.525,
+            278.305,
+            555.741,
+            306.641
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Card No.",
+          "value_text": "เลขที่บัตร",
+          "key_rect": [
+            58.082,
+            333.668,
+            84.997,
+            341.02
+          ],
+          "value_rect": [
+            58.082,
+            317.926,
+            90.588,
+            333.781
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Card No.",
+          "value_text": "",
+          "key_rect": [
+            58.082,
+            333.668,
+            84.997,
+            341.02
+          ],
+          "value_rect": [
+            150.829,
+            321.822,
+            207.517,
+            338.014
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Card No.",
+          "value_text": "",
+          "key_rect": [
+            58.082,
+            333.668,
+            84.997,
+            341.02
+          ],
+          "value_rect": [
+            213.59,
+            321.822,
+            268.253,
+            338.014
+          ],
+          "confidence": 0.54
+        },
+        {
+          "key_text": "Cardholder’s Signature",
+          "value_text": "",
+          "key_rect": [
+            355.389,
+            308.069,
+            422.552,
+            315.421
+          ],
+          "value_rect": [
+            274.327,
+            321.822,
+            331.015,
+            338.014
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Card No.",
+          "value_text": "",
+          "key_rect": [
+            58.082,
+            333.668,
+            84.997,
+            341.02
+          ],
+          "value_rect": [
+            91.105,
+            321.822,
+            146.78,
+            339.026
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Card No.",
+          "value_text": "เลขที่บัตร",
+          "key_rect": [
+            58.082,
+            360.597,
+            84.997,
+            367.949
+          ],
+          "value_rect": [
+            58.082,
+            344.855,
+            90.588,
+            360.71
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Card No.",
+          "value_text": "",
+          "key_rect": [
+            58.082,
+            360.597,
+            84.997,
+            367.949
+          ],
+          "value_rect": [
+            90.092,
+            348.134,
+            146.78,
+            364.326
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Card No.",
+          "value_text": "",
+          "key_rect": [
+            58.082,
+            360.597,
+            84.997,
+            367.949
+          ],
+          "value_rect": [
+            150.829,
+            348.134,
+            205.492,
+            364.326
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cardholder’s Signature",
+          "value_text": "",
+          "key_rect": [
+            355.389,
+            308.069,
+            422.552,
+            315.421
+          ],
+          "value_rect": [
+            273.315,
+            348.134,
+            331.015,
+            364.326
+          ],
+          "confidence": 0.546
+        },
+        {
+          "key_text": "Cardholder’s Signature",
+          "value_text": "",
+          "key_rect": [
+            355.389,
+            308.069,
+            422.552,
+            315.421
+          ],
+          "value_rect": [
+            330.002,
+            364.326,
+            455.525,
+            392.663
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cardholder’s Signature",
+          "value_text": "",
+          "key_rect": [
+            355.389,
+            308.069,
+            422.552,
+            315.421
+          ],
+          "value_rect": [
+            455.525,
+            363.314,
+            553.716,
+            386.591
+          ],
+          "confidence": 0.972
+        },
+        {
+          "key_text": "Loan Account No.",
+          "value_text": "เลขที่บัญชีสินเชื่อ",
+          "key_rect": [
+            58.082,
+            413.038,
+            111.972,
+            420.39
+          ],
+          "value_rect": [
+            58.082,
+            397.296,
+            115.604,
+            413.151
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Loan Account No.",
+          "value_text": "",
+          "key_rect": [
+            58.082,
+            413.038,
+            111.972,
+            420.39
+          ],
+          "value_rect": [
+            117.424,
+            400.759,
+            355.309,
+            416.951
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "บัญชีเลขที่",
+          "key_rect": [
+            64.989,
+            475.4,
+            102.38,
+            482.752
+          ],
+          "value_rect": [
+            63.82,
+            459.658,
+            98.785,
+            475.513
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "",
+          "key_rect": [
+            64.989,
+            475.4,
+            102.38,
+            482.752
+          ],
+          "value_rect": [
+            110.338,
+            461.48,
+            145.768,
+            478.685
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "",
+          "key_rect": [
+            64.989,
+            475.4,
+            102.38,
+            482.752
+          ],
+          "value_rect": [
+            154.878,
+            460.468,
+            177.148,
+            478.685
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "",
+          "key_rect": [
+            64.989,
+            475.4,
+            102.38,
+            482.752
+          ],
+          "value_rect": [
+            187.271,
+            460.468,
+            254.082,
+            478.685
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "ชื่อบัญชี",
+          "key_rect": [
+            63.043,
+            503.747,
+            108.401,
+            511.099
+          ],
+          "value_rect": [
+            63.043,
+            488.005,
+            89.894,
+            503.86
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "บัญชีเลขที่",
+          "key_rect": [
+            64.989,
+            530.676,
+            102.38,
+            538.028
+          ],
+          "value_rect": [
+            63.82,
+            514.934,
+            98.785,
+            530.789
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "",
+          "key_rect": [
+            64.989,
+            530.676,
+            102.38,
+            538.028
+          ],
+          "value_rect": [
+            109.326,
+            518.153,
+            153.866,
+            535.358
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "",
+          "key_rect": [
+            64.989,
+            530.676,
+            102.38,
+            538.028
+          ],
+          "value_rect": [
+            155.89,
+            517.141,
+            176.136,
+            535.358
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.",
+          "value_text": "",
+          "key_rect": [
+            64.989,
+            530.676,
+            102.38,
+            538.028
+          ],
+          "value_rect": [
+            177.148,
+            518.153,
+            261.167,
+            534.346
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "ชื่อบัญชี",
+          "key_rect": [
+            63.043,
+            559.022,
+            108.401,
+            566.374
+          ],
+          "value_rect": [
+            63.043,
+            543.28,
+            89.894,
+            559.135
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account Name",
+          "value_text": "และขอใชบริการเต็มรูปแบบของบัวหลวง",
+          "key_rect": [
+            63.043,
+            559.022,
+            108.401,
+            566.374
+          ],
+          "value_rect": [
+            43.909,
+            568.173,
+            178.315,
+            584.028
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cancel Deposit Account/Open-End Fund Account",
+          "value_text": "ขอยกเลิกบัญชีเงินฝากหรือบัญชีกองทุนเปด",
+          "key_rect": [
+            57.373,
+            617.729,
+            208.208,
+            625.009
+          ],
+          "value_rect": [
+            57.373,
+            602.046,
+            201.912,
+            617.901
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.บัญชีเลขที่",
+          "value_text": "",
+          "key_rect": [
+            265.89,
+            602.201,
+            303.281,
+            623.204
+          ],
+          "value_rect": [
+            313.806,
+            603.163,
+            355.309,
+            621.379
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.บัญชีเลขที่",
+          "value_text": "",
+          "key_rect": [
+            265.89,
+            602.201,
+            303.281,
+            623.204
+          ],
+          "value_rect": [
+            358.346,
+            603.163,
+            378.592,
+            621.379
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.บัญชีเลขที่",
+          "value_text": "",
+          "key_rect": [
+            265.89,
+            602.201,
+            303.281,
+            623.204
+          ],
+          "value_rect": [
+            379.604,
+            603.163,
+            468.685,
+            620.367
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cancel Foreign Currency Deposit Account",
+          "value_text": "ขอยกเลิกบัญชีเงินฝากเงินตราตางประเทศ",
+          "key_rect": [
+            57.373,
+            646.783,
+            183.369,
+            654.064
+          ],
+          "value_rect": [
+            57.373,
+            631.101,
+            198.742,
+            646.956
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.บัญชีเลขที่",
+          "value_text": "",
+          "key_rect": [
+            219.119,
+            631.256,
+            256.51,
+            652.259
+          ],
+          "value_rect": [
+            266.229,
+            632.512,
+            308.745,
+            650.728
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.บัญชีเลขที่",
+          "value_text": "",
+          "key_rect": [
+            219.119,
+            631.256,
+            256.51,
+            652.259
+          ],
+          "value_rect": [
+            313.806,
+            632.512,
+            357.334,
+            649.716
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.บัญชีเลขที่",
+          "value_text": "",
+          "key_rect": [
+            219.119,
+            631.256,
+            256.51,
+            652.259
+          ],
+          "value_rect": [
+            362.395,
+            632.512,
+            417.058,
+            649.716
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.บัญชีเลขที่",
+          "value_text": "",
+          "key_rect": [
+            219.119,
+            631.256,
+            256.51,
+            652.259
+          ],
+          "value_rect": [
+            417.058,
+            632.512,
+            551.692,
+            649.716
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cancel Third Party Deposit Account",
+          "value_text": "",
+          "key_rect": [
+            57.373,
+            676.547,
+            163.759,
+            683.828
+          ],
+          "value_rect": [
+            39.478,
+            664.896,
+            52.638,
+            678.052
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cancel Third Party Deposit Account",
+          "value_text": "ขอยกเลิกบัญชีเงินฝากผูรับโอนเงินของบุคคลอื่น",
+          "key_rect": [
+            57.373,
+            676.547,
+            163.759,
+            683.828
+          ],
+          "value_rect": [
+            57.373,
+            660.865,
+            217.2,
+            676.72
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.บัญชีเลขที่",
+          "value_text": "",
+          "key_rect": [
+            265.89,
+            660.311,
+            303.281,
+            681.314
+          ],
+          "value_rect": [
+            312.794,
+            662.872,
+            357.334,
+            680.076
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.บัญชีเลขที่",
+          "value_text": "",
+          "key_rect": [
+            265.89,
+            660.311,
+            303.281,
+            681.314
+          ],
+          "value_rect": [
+            357.334,
+            662.872,
+            377.58,
+            680.076
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Account No.บัญชีเลขที่",
+          "value_text": "",
+          "key_rect": [
+            265.89,
+            660.311,
+            303.281,
+            681.314
+          ],
+          "value_rect": [
+            371.506,
+            662.872,
+            476.783,
+            680.076
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cancel Bangkok Bank Credit Card Account",
+          "value_text": "",
+          "key_rect": [
+            57.373,
+            706.31,
+            187.303,
+            713.591
+          ],
+          "value_rect": [
+            38.466,
+            693.233,
+            51.626,
+            705.377
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cancel Bangkok Bank Credit Card Account",
+          "value_text": "ขอยกเลิกบัตรเครดิตของธนาคารกรุงเทพ",
+          "key_rect": [
+            57.373,
+            706.31,
+            187.303,
+            713.591
+          ],
+          "value_rect": [
+            57.373,
+            690.628,
+            193.99,
+            706.483
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "เลขที่บัตร Card No.",
+          "value_text": "",
+          "key_rect": [
+            270.774,
+            689.264,
+            303.28,
+            712.358
+          ],
+          "value_rect": [
+            313.806,
+            692.221,
+            536.507,
+            710.437
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Cancel Loan Account",
+          "value_text": "ขอยกเลิกบัญชีสินเชื่อ",
+          "key_rect": [
+            58.791,
+            736.783,
+            124.44,
+            744.064
+          ],
+          "value_rect": [
+            58.791,
+            721.101,
+            130.518,
+            736.956
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "เลขที่บัญชีสินเชื่อLoan Account No.",
+          "value_text": "",
+          "key_rect": [
+            245.755,
+            719.982,
+            303.279,
+            740.985
+          ],
+          "value_rect": [
+            330.002,
+            722.581,
+            523.348,
+            740.798
+          ],
+          "confidence": 0.999
+        }
+      ]
+    },
+    {
+      "properties": {
+        "pageNumber": 3
+      },
+      "keyValueElements": [
+        {
+          "key_text": "Change the daily limit for 3rd party transfers via Bualuang mBanking",
+          "value_text": "ขอเปลี่ยนวงเงินรวมของบริการบัวหลวง",
+          "key_rect": [
+            57.373,
+            107.264,
+            258.183,
+            116.69
+          ],
+          "value_rect": [
+            57.373,
+            92.727,
+            187.929,
+            108.582
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Change the daily limit for 3rd party transfers via Bualuang mBanking",
+          "value_text": "เอ็มแบงกกิ้งสำหรับการโอนเงินไปบัญชีบุคคลอื่น",
+          "key_rect": [
+            57.373,
+            107.264,
+            258.183,
+            116.69
+          ],
+          "value_rect": [
+            191.68,
+            92.727,
+            351.828,
+            108.582
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "50,000",
+          "value_text": "",
+          "key_rect": [
+            124.119,
+            157.206,
+            146.619,
+            166.306
+          ],
+          "value_rect": [
+            108.313,
+            153.826,
+            120.461,
+            165.971
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "100,000",
+          "value_text": "",
+          "key_rect": [
+            180.293,
+            157.206,
+            206.885,
+            166.306
+          ],
+          "value_rect": [
+            165.001,
+            153.826,
+            177.148,
+            165.971
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "200,000",
+          "value_text": "",
+          "key_rect": [
+            236.876,
+            157.206,
+            263.468,
+            166.306
+          ],
+          "value_rect": [
+            221.689,
+            154.838,
+            232.824,
+            164.959
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "300,000",
+          "value_text": "",
+          "key_rect": [
+            294.828,
+            157.206,
+            321.42,
+            166.306
+          ],
+          "value_rect": [
+            276.352,
+            151.802,
+            291.536,
+            166.983
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "500,000",
+          "value_text": "✔",
+          "key_rect": [
+            351.033,
+            157.206,
+            377.625,
+            166.306
+          ],
+          "value_rect": [
+            334.052,
+            153.826,
+            348.223,
+            165.971
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "1,000,000",
+          "value_text": "",
+          "key_rect": [
+            407.24,
+            157.206,
+            439.976,
+            166.306
+          ],
+          "value_rect": [
+            389.727,
+            152.814,
+            404.911,
+            165.971
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "2,000,000",
+          "value_text": "",
+          "key_rect": [
+            464.136,
+            157.206,
+            496.872,
+            166.306
+          ],
+          "value_rect": [
+            445.402,
+            151.802,
+            460.586,
+            165.971
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Change the daily limit for payments of goods and services via Bualuang mBanking",
+          "value_text": "ขอเปลี่ยนวงเงินรวมของบริการบัวหลวง",
+          "key_rect": [
+            57.373,
+            190.196,
+            303.851,
+            197.477
+          ],
+          "value_rect": [
+            57.373,
+            173.514,
+            187.929,
+            189.369
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "0",
+          "value_text": "",
+          "key_rect": [
+            82.176,
+            237.993,
+            86.256,
+            247.093
+          ],
+          "value_rect": [
+            65.798,
+            234.788,
+            80.982,
+            246.932
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "50,000",
+          "value_text": "",
+          "key_rect": [
+            124.119,
+            237.993,
+            146.619,
+            247.093
+          ],
+          "value_rect": [
+            109.326,
+            234.788,
+            120.461,
+            245.92
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "100,000",
+          "value_text": "",
+          "key_rect": [
+            180.293,
+            237.993,
+            206.885,
+            247.093
+          ],
+          "value_rect": [
+            162.976,
+            231.752,
+            179.173,
+            247.944
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "200,000",
+          "value_text": "",
+          "key_rect": [
+            236.876,
+            237.993,
+            263.468,
+            247.093
+          ],
+          "value_rect": [
+            221.689,
+            233.776,
+            234.848,
+            246.932
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "300,000",
+          "value_text": "",
+          "key_rect": [
+            294.828,
+            237.993,
+            321.42,
+            247.093
+          ],
+          "value_rect": [
+            275.339,
+            230.74,
+            293.56,
+            248.956
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "500,000",
+          "value_text": "",
+          "key_rect": [
+            351.033,
+            237.993,
+            377.625,
+            247.093
+          ],
+          "value_rect": [
+            333.039,
+            231.752,
+            347.211,
+            246.932
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "1,000,000",
+          "value_text": "",
+          "key_rect": [
+            407.24,
+            237.993,
+            439.976,
+            247.093
+          ],
+          "value_rect": [
+            387.702,
+            233.776,
+            403.899,
+            245.92
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "0",
+          "value_text": "✔",
+          "key_rect": [
+            90.68,
+            409.489,
+            94.76,
+            418.589
+          ],
+          "value_rect": [
+            73.896,
+            405.819,
+            89.08,
+            417.963
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "50,000",
+          "value_text": "",
+          "key_rect": [
+            132.623,
+            409.489,
+            155.123,
+            418.589
+          ],
+          "value_rect": [
+            118.436,
+            405.819,
+            129.571,
+            417.963
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "100,000",
+          "value_text": "",
+          "key_rect": [
+            188.797,
+            409.489,
+            215.389,
+            418.589
+          ],
+          "value_rect": [
+            174.111,
+            405.819,
+            186.259,
+            416.951
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "200,000",
+          "value_text": "✔",
+          "key_rect": [
+            245.38,
+            409.489,
+            271.972,
+            418.589
+          ],
+          "value_rect": [
+            227.762,
+            405.819,
+            238.897,
+            416.951
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "300,000",
+          "value_text": "",
+          "key_rect": [
+            303.332,
+            409.489,
+            329.924,
+            418.589
+          ],
+          "value_rect": [
+            287.487,
+            405.819,
+            300.646,
+            416.951
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "500,000",
+          "value_text": "",
+          "key_rect": [
+            359.537,
+            409.489,
+            386.129,
+            418.589
+          ],
+          "value_rect": [
+            343.162,
+            406.831,
+            356.322,
+            417.963
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "1,000,000",
+          "value_text": "✔",
+          "key_rect": [
+            415.744,
+            409.489,
+            448.48,
+            418.589
+          ],
+          "value_rect": [
+            399.85,
+            406.831,
+            410.985,
+            416.951
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "The maximum aggregate amount for PromptPay transfers (Baht/Day)",
+          "value_text": "วงเงินรวมเฉพาะตามขอ 2",
+          "key_rect": [
+            68.003,
+            441.676,
+            271.167,
+            449.028
+          ],
+          "value_rect": [
+            68.003,
+            451.555,
+            143.415,
+            465.296
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "0",
+          "value_text": "",
+          "key_rect": [
+            90.68,
+            488.15,
+            94.76,
+            497.25
+          ],
+          "value_rect": [
+            66.81,
+            484.757,
+            83.006,
+            496.901
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "50,000",
+          "value_text": "",
+          "key_rect": [
+            132.628,
+            488.15,
+            155.15,
+            497.25
+          ],
+          "value_rect": [
+            116.412,
+            483.745,
+            130.583,
+            497.913
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "100,000",
+          "value_text": "",
+          "key_rect": [
+            188.828,
+            488.15,
+            215.447,
+            497.25
+          ],
+          "value_rect": [
+            171.075,
+            483.745,
+            188.283,
+            497.913
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "200,000",
+          "value_text": "✔",
+          "key_rect": [
+            245.443,
+            488.15,
+            272.062,
+            497.25
+          ],
+          "value_rect": [
+            227.762,
+            483.745,
+            242.946,
+            496.901
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "300,000",
+          "value_text": "",
+          "key_rect": [
+            303.427,
+            488.15,
+            330.046,
+            497.25
+          ],
+          "value_rect": [
+            282.425,
+            481.721,
+            299.634,
+            497.913
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "500,000",
+          "value_text": "",
+          "key_rect": [
+            359.663,
+            488.15,
+            386.282,
+            497.25
+          ],
+          "value_rect": [
+            342.15,
+            483.745,
+            357.334,
+            496.901
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "The maximum aggregate amount for PromptPay transfers (Baht/Day)",
+          "value_text": "ขาพเจาขอยกเลิกวงเงินเดิมที่เคยมีกำหนดไว",
+          "key_rect": [
+            68.003,
+            441.676,
+            271.167,
+            449.028
+          ],
+          "value_rect": [
+            76.782,
+            520.603,
+            221.715,
+            536.458
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "The maximum aggregate amount for PromptPay transfers (Baht/Day)",
+          "value_text": "และรับทราบวาวงเงินรวมสูงสุดสำหรับการโอนเงินไปยังบัญชีบุคคลอื่นผานบริการบัวหลวง",
+          "key_rect": [
+            68.003,
+            441.676,
+            271.167,
+            449.028
+          ],
+          "value_rect": [
+            247.521,
+            520.603,
+            538.265,
+            536.458
+          ],
+          "confidence": 0.998
+        },
+        {
+          "key_text": "I hereby revoke the maximum aggregate amount previously specified (if any) and acknowledge that the maximum aggregate amount of 3rd party transfers via Bualuang",
+          "value_text": "",
+          "key_rect": [
+            48.161,
+            554.206,
+            531.75,
+            576.698
+          ],
+          "value_rect": [
+            30.368,
+            574.826,
+            570.925,
+            664.896
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "ลงชื่อ Signature",
+          "value_text": "…",
+          "key_rect": [
+            255.09,
+            657.569,
+            304.521,
+            673.424
+          ],
+          "value_rect": [
+            308.021,
+            657.569,
+            311.021,
+            673.424
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "ลงชื่อ Signature",
+          "value_text": "… … … … … … … … … … …",
+          "key_rect": [
+            255.09,
+            657.569,
+            304.521,
+            673.424
+          ],
+          "value_rect": [
+            338.021,
+            657.569,
+            371.021,
+            673.424
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "สำหรับสาขา Staff ID",
+          "value_text": "",
+          "key_rect": [
+            42.491,
+            692.333,
+            113.8,
+            705.786
+          ],
+          "value_rect": [
+            114.387,
+            690.197,
+            253.069,
+            707.401
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "Campaign Code",
+          "value_text": "",
+          "key_rect": [
+            277.767,
+            696.869,
+            332.56,
+            704.11
+          ],
+          "value_rect": [
+            335.064,
+            691.209,
+            469.697,
+            707.401
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "ผูขอใชบริการ Applicant",
+          "value_text": "รหัสงาน 7009",
+          "key_rect": [
+            468.355,
+            657.569,
+            546.449,
+            673.424
+          ],
+          "value_rect": [
+            491.074,
+            689.393,
+            553.474,
+            708.611
+          ],
+          "confidence": 0.999
+        },
+        {
+          "key_text": "ลงชื่อ … … … … …",
+          "value_text": "",
+          "key_rect": [
+            236.663,
+            715.058,
+            270.021,
+            726.589
+          ],
+          "value_rect": [
+            199.418,
+            710.437,
+            235.86,
+            727.641
+          ],
+          "confidence": 0.985
+        },
+        {
+          "key_text": "รหัสประจำตัว",
+          "value_text": "",
+          "key_rect": [
+            461.407,
+            715.058,
+            498.992,
+            726.589
+          ],
+          "value_rect": [
+            500.065,
+            708.413,
+            525.372,
+            726.629
+          ],
+          "confidence": 0.715
+        },
+        {
+          "key_text": "ลงชื่อ … … …",
+          "value_text": "ลงชื่อ",
+          "key_rect": [
+            42.491,
+            761.828,
+            69.848,
+            773.359
+          ],
+          "value_rect": [
+            42.492,
+            781.671,
+            57.347,
+            793.202
+          ],
+          "confidence": 0.504
+        }
+      ]
+    }
+  ]
+}
